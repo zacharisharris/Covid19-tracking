@@ -1,9 +1,9 @@
 //
 //  SceneDelegate.swift
-//  Clima
+//  COVID19
 //
-//  Created by Angela Yu on 01/09/2019.
-//  Copyright © 2019 App Brewery. All rights reserved.
+//  Created by Harris Zacharis on 1/5/20.
+//  Copyright © 2020 Harris Zacharis. All rights reserved.
 //
 
 import UIKit
