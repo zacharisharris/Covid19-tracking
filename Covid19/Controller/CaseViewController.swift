@@ -9,7 +9,7 @@
 import UIKit
 import Dropper
 
-class WeatherViewController: UIViewController, CaseManagerDelegate, DropperDelegate {
+class CaseViewController: UIViewController {
     
     let dropper = Dropper(width: 125, height: 100)
     
@@ -30,8 +30,6 @@ class WeatherViewController: UIViewController, CaseManagerDelegate, DropperDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        fetchCountryList()
-        
         // Timer for blinker
         Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.animateBlinkers), userInfo: nil, repeats: true)
         
@@ -43,28 +41,10 @@ class WeatherViewController: UIViewController, CaseManagerDelegate, DropperDeleg
     @objc func animateBlinkers(){
         UIView.animate(withDuration: 2.5) {
             self.orangeBlinkImage.alpha = self.orangeBlinkImage.alpha == 1.0 ? 0.0 : 1.0
-              self.redBlinkImage.alpha = self.redBlinkImage.alpha == 1.0 ? 0.0 : 1.0
-              self.greenBlinkImage.alpha = self.greenBlinkImage.alpha == 1.0 ? 0.0 : 1.0
+            self.redBlinkImage.alpha = self.redBlinkImage.alpha == 1.0 ? 0.0 : 1.0
+            self.greenBlinkImage.alpha = self.greenBlinkImage.alpha == 1.0 ? 0.0 : 1.0
         }
     }
-    
-    func fetchCountryList() {
-            var countriesData = [(name: String, flag: String)]()
-
-            for code in NSLocale.isoCountryCodes  {
-
-                let flag = String.emojiFlag(for: code)
-                let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
-
-                if let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) {
-                    countriesData.append((name: name, flag: flag!))
-                }else{
-                     //"Country not found for code: \(code)"
-                }
-            }
-
-            print(countriesData)
-        }
     
     func getUpdateTime() {
         let currentDateTime = Date()
@@ -76,6 +56,12 @@ class WeatherViewController: UIViewController, CaseManagerDelegate, DropperDeleg
         timeLabel.text = "Last updated on: " + dateTimeString
         
     }
+    
+}
+
+//MARK: - Dropper Delegate Methods
+
+extension CaseViewController: DropperDelegate {
     
     @IBAction func DropdownAction() {
         if dropper.status == .hidden {
@@ -96,40 +82,23 @@ class WeatherViewController: UIViewController, CaseManagerDelegate, DropperDeleg
         caseManager.fetchCases(countryName: trimmedContents)
         myButton.setTitle(contents, for: .normal)
         getUpdateTime()
-//        myButton.titleLabel!.textAlignment = .center
-        
-    }
-
-func didUpdateCases(cases: CaseModel) {
-    DispatchQueue.main.async {
-        self.confirmedLabel.text = cases.confirmedCases
-        self.deathsLabel.text = cases.deaths
-        self.recoveredLabel.text = cases.recoveredCases
     }
     
 }
-}
 
-extension String {
+//MARK: - CaseManager Delegate Methods
 
-    static func emojiFlag(for countryCode: String) -> String! {
-        func isLowercaseASCIIScalar(_ scalar: Unicode.Scalar) -> Bool {
-            return scalar.value >= 0x61 && scalar.value <= 0x7A
+extension CaseViewController: CaseManagerDelegate {
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+    func didUpdateCases(cases: CaseModel) {
+        DispatchQueue.main.async {
+            self.confirmedLabel.text = cases.confirmedCases
+            self.deathsLabel.text = cases.deaths
+            self.recoveredLabel.text = cases.recoveredCases
         }
-
-        func regionalIndicatorSymbol(for scalar: Unicode.Scalar) -> Unicode.Scalar {
-            precondition(isLowercaseASCIIScalar(scalar))
-
-            // 0x1F1E6 marks the start of the Regional Indicator Symbol range and corresponds to 'A'
-            // 0x61 marks the start of the lowercase ASCII alphabet: 'a'
-            return Unicode.Scalar(scalar.value + (0x1F1E6 - 0x61))!
-        }
-
-        let lowercasedCode = countryCode.lowercased()
-        guard lowercasedCode.count == 2 else { return nil }
-        guard lowercasedCode.unicodeScalars.reduce(true, { accum, scalar in accum && isLowercaseASCIIScalar(scalar) }) else { return nil }
-
-        let indicatorSymbols = lowercasedCode.unicodeScalars.map({ regionalIndicatorSymbol(for: $0) })
-        return String(indicatorSymbols.map({ Character($0) }))
+        
     }
 }

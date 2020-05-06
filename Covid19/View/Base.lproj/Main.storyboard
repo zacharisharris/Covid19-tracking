@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weather View Controller-->
+        <!--Case View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="CoVID19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CaseViewController" customModule="CoVID19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YtS-RO-ejl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -24,9 +24,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#stayHome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sld-vw-WgD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#stayHome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sld-vw-WgD">
                                         <rect key="frame" x="8" y="78" width="116" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" red="0.78039215689999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -34,9 +33,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.001423205249" green="0.23337191339999999" blue="0.73598682879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="sld-vw-WgD" firstAttribute="top" secondItem="1ca-Tq-zNU" secondAttribute="bottom" constant="8" id="azA-8N-PAi"/>
                                     <constraint firstItem="1ca-Tq-zNU" firstAttribute="top" secondItem="cvA-Ao-goO" secondAttribute="top" constant="43" id="gKo-Iy-2hD"/>
                                     <constraint firstItem="1ca-Tq-zNU" firstAttribute="centerX" secondItem="cvA-Ao-goO" secondAttribute="centerX" constant="-106.75" id="uO8-rb-gqT"/>
                                     <constraint firstItem="1ca-Tq-zNU" firstAttribute="centerY" secondItem="cvA-Ao-goO" secondAttribute="centerY" constant="-50" id="w7g-tw-fdS"/>
+                                    <constraint firstItem="sld-vw-WgD" firstAttribute="leading" secondItem="cvA-Ao-goO" secondAttribute="leadingMargin" id="x2y-Yd-Cb0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iok-8G-Oby">
@@ -149,7 +150,6 @@
                                     <constraint firstItem="JiU-Dh-jAv" firstAttribute="centerX" secondItem="iok-8G-Oby" secondAttribute="centerX" id="950-B7-qft"/>
                                     <constraint firstItem="JiU-Dh-jAv" firstAttribute="leading" secondItem="iok-8G-Oby" secondAttribute="leading" constant="27" id="Bq8-Ae-D9c"/>
                                     <constraint firstItem="Ete-sh-piC" firstAttribute="top" secondItem="fca-gU-G7M" secondAttribute="bottom" constant="51" id="F0q-G3-Blv"/>
-                                    <constraint firstItem="fca-gU-G7M" firstAttribute="centerX" secondItem="iok-8G-Oby" secondAttribute="centerX" id="FEw-ub-oky"/>
                                     <constraint firstItem="yxL-QO-M7n" firstAttribute="top" secondItem="Ete-sh-piC" secondAttribute="bottom" id="Mog-9a-nyF"/>
                                     <constraint firstItem="wlt-zM-KBM" firstAttribute="top" secondItem="iok-8G-Oby" secondAttribute="top" constant="32" id="PRh-7r-3ki"/>
                                     <constraint firstItem="wlt-zM-KBM" firstAttribute="leading" secondItem="iok-8G-Oby" secondAttribute="leading" constant="30" id="SgD-Z2-EuA"/>
@@ -264,6 +264,7 @@
                         <outlet property="recoveredLabel" destination="sno-rR-WTi" id="GdJ-As-D4G"/>
                         <outlet property="redBlinkImage" destination="Q4Z-K6-jPL" id="1qo-hP-cwh"/>
                         <outlet property="timeLabel" destination="yxL-QO-M7n" id="tDh-iN-mQB"/>
+                        <outlet property="view" destination="YtS-RO-ejl" id="4T1-mQ-YZF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

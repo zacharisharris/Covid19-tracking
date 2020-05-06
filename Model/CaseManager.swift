@@ -10,6 +10,7 @@ import Foundation
 
 protocol CaseManagerDelegate {
     func didUpdateCases(cases: CaseModel)
+    func didFailWithError(error: Error)
 }
 
 struct CaseManager {
@@ -21,33 +22,24 @@ struct CaseManager {
     
     func fetchCases(countryName: String) {
         let urlString = "\(caseURL)/\(countryName)"
-        performRequest(urlString: urlString)
+        performRequest(urlString)
         print(urlString)
     }
     
-    func handle(data: Data?, response: URLResponse?, error: Error?) {
-
-    }
-    
-    func performRequest(urlString: String) {
+    func performRequest(_ urlString: String) {
         // 1.
-        
-        
-        
         if let url = URL(string: urlString) {
             // 2.
-            
             let session = URLSession(configuration: .default)
-            
             // 3.
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error!)
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
                 if let data = data {
-                    if let countryCases = self.parseJSON(caseData: data) {
+                    if let countryCases = self.parseJSON(data) {
                         self.delegate?.didUpdateCases(cases: countryCases)
                     }
                     
@@ -58,7 +50,7 @@ struct CaseManager {
         }
     }
     
-    func parseJSON(caseData: Data) -> CaseModel? {
+    func parseJSON(_ caseData: Data) -> CaseModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(CaseData.self, from: caseData)
@@ -66,10 +58,9 @@ struct CaseManager {
             let recoveredCases = decodedData.recovered.formattedWithSeparator
             let deaths = decodedData.deaths.formattedWithSeparator
             let countryCases = CaseModel(recoveredCases: recoveredCases, confirmedCases: confirmedCases, deaths: deaths)
-        
             return countryCases
         } catch {
-            print(error)
+            delegate?.didFailWithError(error: error)
             return nil
         }
 }
