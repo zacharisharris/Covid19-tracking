@@ -19,13 +19,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="213"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prevent COVID-19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ca-Tq-zNU">
-                                        <rect key="frame" x="8.5" y="43" width="184" height="27"/>
+                                        <rect key="frame" x="20" y="43" width="210" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#stayHome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sld-vw-WgD">
-                                        <rect key="frame" x="8" y="78" width="116" height="28"/>
+                                        <rect key="frame" x="20" y="78.5" width="116" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" red="0.78039215689999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -33,11 +33,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.001423205249" green="0.23337191339999999" blue="0.73598682879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="1ca-Tq-zNU" firstAttribute="left" secondItem="cvA-Ao-goO" secondAttribute="left" constant="20" id="Hcu-Hj-wC9"/>
                                     <constraint firstItem="sld-vw-WgD" firstAttribute="top" secondItem="1ca-Tq-zNU" secondAttribute="bottom" constant="8" id="azA-8N-PAi"/>
                                     <constraint firstItem="1ca-Tq-zNU" firstAttribute="top" secondItem="cvA-Ao-goO" secondAttribute="top" constant="43" id="gKo-Iy-2hD"/>
-                                    <constraint firstItem="1ca-Tq-zNU" firstAttribute="centerX" secondItem="cvA-Ao-goO" secondAttribute="centerX" constant="-106.75" id="uO8-rb-gqT"/>
-                                    <constraint firstItem="1ca-Tq-zNU" firstAttribute="centerY" secondItem="cvA-Ao-goO" secondAttribute="centerY" constant="-50" id="w7g-tw-fdS"/>
-                                    <constraint firstItem="sld-vw-WgD" firstAttribute="leading" secondItem="cvA-Ao-goO" secondAttribute="leadingMargin" id="x2y-Yd-Cb0"/>
+                                    <constraint firstItem="1ca-Tq-zNU" firstAttribute="centerX" secondItem="cvA-Ao-goO" secondAttribute="centerX" constant="-82" id="uO8-rb-gqT"/>
+                                    <constraint firstItem="sld-vw-WgD" firstAttribute="left" secondItem="cvA-Ao-goO" secondAttribute="left" constant="20" id="x2y-Yd-Cb0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iok-8G-Oby">
@@ -49,7 +49,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MW6-PR-ohc" userLabel="Infected Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="92" height="148"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-final_state" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-mz-Wxa">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dot" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-mz-Wxa">
                                                         <rect key="frame" x="30" y="0.0" width="32" height="36"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pM-SY-Q9z">
@@ -69,7 +69,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Stw-fs-DuY" userLabel="Deaths Stack">
                                                 <rect key="frame" x="148.5" y="0.0" width="62.5" height="148"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-final_state" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-K6-jPL">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_dot" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-K6-jPL">
                                                         <rect key="frame" x="15.5" y="0.0" width="32" height="36"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PC-ec-nHd">
@@ -89,7 +89,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-yz-OZW" userLabel="Recovered Stack">
                                                 <rect key="frame" x="267.5" y="0.0" width="92.5" height="148"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-final_state" translatesAutoresizingMaskIntoConstraints="NO" id="R3R-mg-LV4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_dot" translatesAutoresizingMaskIntoConstraints="NO" id="R3R-mg-LV4">
                                                         <rect key="frame" x="30.5" y="0.0" width="32" height="36"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sno-rR-WTi">
@@ -121,11 +121,12 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fca-gU-G7M">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fca-gU-G7M">
                                         <rect key="frame" x="58" y="20" width="299" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Select a country">
+                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Select a country" image="marker">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -135,13 +136,6 @@
                                             <action selector="DropdownAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRv-8R-fyD"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-marker" translatesAutoresizingMaskIntoConstraints="NO" id="wlt-zM-KBM">
-                                        <rect key="frame" x="30" y="32" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="VIP-rd-kaK"/>
-                                            <constraint firstAttribute="width" constant="20" id="Vvz-ST-y3L"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -151,8 +145,6 @@
                                     <constraint firstItem="JiU-Dh-jAv" firstAttribute="leading" secondItem="iok-8G-Oby" secondAttribute="leading" constant="27" id="Bq8-Ae-D9c"/>
                                     <constraint firstItem="Ete-sh-piC" firstAttribute="top" secondItem="fca-gU-G7M" secondAttribute="bottom" constant="51" id="F0q-G3-Blv"/>
                                     <constraint firstItem="yxL-QO-M7n" firstAttribute="top" secondItem="Ete-sh-piC" secondAttribute="bottom" id="Mog-9a-nyF"/>
-                                    <constraint firstItem="wlt-zM-KBM" firstAttribute="top" secondItem="iok-8G-Oby" secondAttribute="top" constant="32" id="PRh-7r-3ki"/>
-                                    <constraint firstItem="wlt-zM-KBM" firstAttribute="leading" secondItem="iok-8G-Oby" secondAttribute="leading" constant="30" id="SgD-Z2-EuA"/>
                                     <constraint firstItem="yxL-QO-M7n" firstAttribute="leading" secondItem="iok-8G-Oby" secondAttribute="leading" constant="20" id="YvC-jZ-h2U"/>
                                     <constraint firstAttribute="trailing" secondItem="JiU-Dh-jAv" secondAttribute="trailing" constant="27" id="cnK-lJ-E6y"/>
                                     <constraint firstAttribute="trailing" secondItem="fca-gU-G7M" secondAttribute="trailing" constant="57" id="g5X-Oi-SXt"/>
@@ -165,58 +157,58 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnc-Yq-SwT">
                                 <rect key="frame" x="0.0" y="633" width="414" height="229"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Symptoms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9z-wz-IeW">
-                                        <rect key="frame" x="20" y="8" width="93.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Prevention" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9z-wz-IeW">
+                                        <rect key="frame" x="20" y="2" width="92.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Get to know the virus better" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-kl-lhC">
-                                        <rect key="frame" x="20" y="40" width="202.5" height="19.5"/>
+                                        <rect key="frame" x="20" y="27" width="202.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-JP-Np6">
-                                        <rect key="frame" x="20" y="82" width="374" height="108"/>
+                                        <rect key="frame" x="20" y="64" width="374" height="145"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CTs-MN-05n" userLabel="Headache Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="108"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="145"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="headache" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-cP-Hqb">
-                                                        <rect key="frame" x="2" y="0.0" width="85" height="82"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="protect-1" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-cP-Hqb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="100"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headache" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mM-cV-Ovc">
-                                                        <rect key="frame" x="0.0" y="84" width="89.5" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wear a mask." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mM-cV-Ovc">
+                                                        <rect key="frame" x="13.5" y="102" width="62.5" height="43"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="nQY-w3-0mi" userLabel="Cough Stack">
-                                                <rect key="frame" x="142.5" y="0.0" width="89" height="108"/>
+                                                <rect key="frame" x="142.5" y="0.0" width="89" height="145"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cough" translatesAutoresizingMaskIntoConstraints="NO" id="4Gk-4l-Q1W">
-                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="81"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" image="protect-2" translatesAutoresizingMaskIntoConstraints="NO" id="4Gk-4l-Q1W">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="100"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cough" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAM-Xe-TQJ">
-                                                        <rect key="frame" x="0.0" y="84" width="89" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wash your hands" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAM-Xe-TQJ">
+                                                        <rect key="frame" x="0.0" y="103" width="89" height="42"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cXk-ea-vjl" userLabel="Fever Stack">
-                                                <rect key="frame" x="284.5" y="0.0" width="89.5" height="108"/>
+                                                <rect key="frame" x="284.5" y="0.0" width="89.5" height="145"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="fever" translatesAutoresizingMaskIntoConstraints="NO" id="jDJ-j5-849">
-                                                        <rect key="frame" x="2.5" y="0.0" width="85" height="82"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="protect-3" translatesAutoresizingMaskIntoConstraints="NO" id="jDJ-j5-849">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="102"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fever" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d7-O6-Ois">
-                                                        <rect key="frame" x="21" y="84" width="48" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep your distance." textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d7-O6-Ois">
+                                                        <rect key="frame" x="4" y="104" width="81.5" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -227,14 +219,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="K9z-wz-IeW" firstAttribute="top" secondItem="vnc-Yq-SwT" secondAttribute="top" constant="8" id="2wL-o2-ggP"/>
-                                    <constraint firstAttribute="bottom" secondItem="gWI-JP-Np6" secondAttribute="bottom" constant="39" id="FQO-kG-HM2"/>
+                                    <constraint firstItem="K9z-wz-IeW" firstAttribute="top" secondItem="vnc-Yq-SwT" secondAttribute="top" constant="2" id="2wL-o2-ggP"/>
+                                    <constraint firstAttribute="bottom" secondItem="gWI-JP-Np6" secondAttribute="bottom" constant="20" id="FQO-kG-HM2"/>
                                     <constraint firstAttribute="trailing" secondItem="gWI-JP-Np6" secondAttribute="trailing" constant="20" id="GIq-wc-N4y"/>
                                     <constraint firstItem="YlO-kl-lhC" firstAttribute="leading" secondItem="vnc-Yq-SwT" secondAttribute="leading" constant="20" id="Hbz-ev-pfj"/>
                                     <constraint firstItem="K9z-wz-IeW" firstAttribute="leading" secondItem="vnc-Yq-SwT" secondAttribute="leading" constant="20" id="OwV-oo-44b"/>
-                                    <constraint firstItem="gWI-JP-Np6" firstAttribute="top" secondItem="YlO-kl-lhC" secondAttribute="bottom" constant="22.5" id="pa2-Eb-Wzi"/>
+                                    <constraint firstItem="gWI-JP-Np6" firstAttribute="top" secondItem="YlO-kl-lhC" secondAttribute="bottom" constant="7" id="pa2-Eb-Wzi"/>
                                     <constraint firstItem="gWI-JP-Np6" firstAttribute="leading" secondItem="vnc-Yq-SwT" secondAttribute="leading" constant="20" id="pvN-cr-dYT"/>
-                                    <constraint firstItem="YlO-kl-lhC" firstAttribute="top" secondItem="K9z-wz-IeW" secondAttribute="bottom" constant="8" id="u6N-MZ-mQf"/>
+                                    <constraint firstItem="YlO-kl-lhC" firstAttribute="top" secondItem="K9z-wz-IeW" secondAttribute="bottom" constant="1" id="u6N-MZ-mQf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -273,10 +265,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cough" width="85" height="81"/>
-        <image name="fever" width="85" height="81"/>
-        <image name="headache" width="85" height="81"/>
-        <image name="icons8-final_state" width="32" height="32"/>
-        <image name="icons8-marker" width="48" height="48"/>
+        <image name="green_dot" width="32" height="32"/>
+        <image name="marker" width="20" height="20"/>
+        <image name="orange_dot" width="32" height="32"/>
+        <image name="protect-1" width="100" height="100"/>
+        <image name="protect-2" width="100" height="100"/>
+        <image name="protect-3" width="100" height="100"/>
+        <image name="red_dot" width="32" height="32"/>
     </resources>
 </document>
