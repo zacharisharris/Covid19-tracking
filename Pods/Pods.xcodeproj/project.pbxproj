@@ -3,68 +3,84 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11155A43074CFDFAC99E03AD4D6AABF1 /* DropperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3E6A1DCD62DC98324BE051DEE51BE /* DropperExtensions.swift */; };
-		18E7644BA8CBF59D6F7FCC7D676A2B93 /* Dropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55323CB2FBC25271789B429EBEE9199B /* Dropper.swift */; };
-		2EA7D926E9B846474E368F66942A5FC1 /* Dropper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E725AADC5C8BCF112E00A3CDCDD1A7 /* Dropper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		813C2F93C327BB037EF43E00CE5CC1EE /* DropperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395DC73D4D6F61C405F1025A0C4EC594 /* DropperCell.swift */; };
-		8A871E10FC825C9E514153374E21A10C /* Dropper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE093DA93AD5DB6C756282564C2E601 /* Dropper-dummy.m */; };
-		8FB46872D19E096AA963AADCA6937BF2 /* Pods-COVID19-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6139C87DC7FFE84CEF17A72666C3490D /* Pods-COVID19-dummy.m */; };
+		0CC468D5BDEC9EAA4783B2833844C16C /* EFCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994364E1E0325318C25858D7E91A3D8 /* EFCount.swift */; };
+		11155A43074CFDFAC99E03AD4D6AABF1 /* DropperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B927CD46D70FC50B4562CC8321B0FD /* DropperExtensions.swift */; };
+		18E7644BA8CBF59D6F7FCC7D676A2B93 /* Dropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5485AA600CFBCE9FFD77104B27D4E57 /* Dropper.swift */; };
+		2A2AC199E504660604EDA6DAB86EBF9E /* EFCountingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D5F4465BB6E76310CC5B3E5D7C11331 /* EFCountingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EA7D926E9B846474E368F66942A5FC1 /* Dropper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B85768F643FA500BB73C365401BEF7 /* Dropper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DC54E51ECD6D08BC366578BA4E7982A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		4F334D216196E032FB47C2E3A5872704 /* EFCountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0300E7368AAAE5F1B2DCBC7A78D3A6B /* EFCountingLabel-dummy.m */; };
+		58E8F46170F0BA6E334BDA7AD5F60C40 /* Pods-COVID19-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6139C87DC7FFE84CEF17A72666C3490D /* Pods-COVID19-dummy.m */; };
+		779757D3F9844E1C30FAD17FB2924E5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		80D80F83B6B48AC874579ECAB0AF470A /* EFTimingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCA8383C56BA78D14CEFBE77B20B43 /* EFTimingMethod.swift */; };
+		813C2F93C327BB037EF43E00CE5CC1EE /* DropperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE05181FBD1A5FEDE5A05147C65F8F /* DropperCell.swift */; };
+		8A871E10FC825C9E514153374E21A10C /* Dropper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5671DE0E5B5D263D1A7029D09E808186 /* Dropper-dummy.m */; };
 		A45320C67A6E654FC66AA4B0B3A46CDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		B4A20D6C4EBD7B48B671874A5E09BFAC /* DropperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761F85A43DE856A114102F93B3F9874 /* DropperDelegate.swift */; };
-		C0058F156BEFABE9B73E7B6D11A2973B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		EC5734319232ED4679F418E63059CE1F /* Pods-COVID19-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7438CB41122F7C5A57C20FAB23210E50 /* Pods-COVID19-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0B01BF9248C17F961CFD2AA033A6CBD /* EFCountAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE435B455CB2C3C6C3A46C0A051B5B9B /* EFCountAdapter.swift */; };
+		B4A20D6C4EBD7B48B671874A5E09BFAC /* DropperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2778F2EE5E419E93F01E322166D4D2 /* DropperDelegate.swift */; };
+		FBDB7780D713086859E803DB70A07FFB /* Pods-COVID19-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7438CB41122F7C5A57C20FAB23210E50 /* Pods-COVID19-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		14C72E0103610B0CC432B528C848D30B /* PBXContainerItemProxy */ = {
+		249E15157FF7110EE31D37ECA09F001D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 369974F7679ED5F4856B88F12F76F820;
 			remoteInfo = Dropper;
 		};
+		3AEB3F714087725CC39BD9A23BF23661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D87E5A9FC1F8F56498963BEA9EDFE7A;
+			remoteInfo = EFCountingLabel;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0994364E1E0325318C25858D7E91A3D8 /* EFCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EFCount.swift; path = EFCountingLabel/EFCount.swift; sourceTree = "<group>"; };
 		1BE30D08284275B97142C4D6965F9F68 /* Pods-COVID19-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-COVID19-Info.plist"; sourceTree = "<group>"; };
-		21FB0A9CBEF291EC6A86AD6280918C8C /* Dropper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dropper.debug.xcconfig; sourceTree = "<group>"; };
-		25B15A7C68649A5C1F95D6EEDD954377 /* Dropper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Dropper-Info.plist"; sourceTree = "<group>"; };
-		28D3E6A1DCD62DC98324BE051DEE51BE /* DropperExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropperExtensions.swift; path = Pod/Classes/DropperExtensions.swift; sourceTree = "<group>"; };
-		28E0ABCF0DC7DE6CF8A8319062658F0A /* Dropper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Dropper.modulemap; sourceTree = "<group>"; };
+		1D5F4465BB6E76310CC5B3E5D7C11331 /* EFCountingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFCountingLabel-umbrella.h"; sourceTree = "<group>"; };
+		1EC277D878963CAF123E2DBA6283D8F7 /* Dropper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Dropper.modulemap; sourceTree = "<group>"; };
+		3099A6F258C420B8E89D3BF8261ED941 /* Dropper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Dropper-Info.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3761F85A43DE856A114102F93B3F9874 /* DropperDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropperDelegate.swift; path = Pod/Classes/DropperDelegate.swift; sourceTree = "<group>"; };
-		395DC73D4D6F61C405F1025A0C4EC594 /* DropperCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropperCell.swift; path = Pod/Classes/DropperCell.swift; sourceTree = "<group>"; };
+		3313C0375D0F1D130DEF5C71988C8596 /* Dropper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dropper.release.xcconfig; sourceTree = "<group>"; };
+		50A5F4815534C241368EF05788E56561 /* EFCountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFCountingLabel-prefix.pch"; sourceTree = "<group>"; };
 		5145BDF118214DC284F96DC5BED72D59 /* Pods-COVID19-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-COVID19-acknowledgements.markdown"; sourceTree = "<group>"; };
-		52E725AADC5C8BCF112E00A3CDCDD1A7 /* Dropper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dropper-umbrella.h"; sourceTree = "<group>"; };
-		55323CB2FBC25271789B429EBEE9199B /* Dropper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dropper.swift; path = Pod/Classes/Dropper.swift; sourceTree = "<group>"; };
+		5671DE0E5B5D263D1A7029D09E808186 /* Dropper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dropper-dummy.m"; sourceTree = "<group>"; };
 		5C4970DAE2FB9BD6B1BC460935714D8A /* Pods-COVID19-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-COVID19-frameworks.sh"; sourceTree = "<group>"; };
 		5DC53B9CC3A8F8508548903D050E0116 /* Pods-COVID19.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-COVID19.modulemap"; sourceTree = "<group>"; };
+		5DCE05181FBD1A5FEDE5A05147C65F8F /* DropperCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropperCell.swift; path = Pod/Classes/DropperCell.swift; sourceTree = "<group>"; };
+		5EBFFBCF9E56DA4AF71E6A1981521E28 /* EFCountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EFCountingLabel.framework; path = EFCountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6139C87DC7FFE84CEF17A72666C3490D /* Pods-COVID19-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-COVID19-dummy.m"; sourceTree = "<group>"; };
 		657805EF045F594DB839E0F97CD61CC0 /* Pods-COVID19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-COVID19.debug.xcconfig"; sourceTree = "<group>"; };
+		6985D0DDB110031B535573348B2642B3 /* EFCountingLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EFCountingLabel.release.xcconfig; sourceTree = "<group>"; };
 		7438CB41122F7C5A57C20FAB23210E50 /* Pods-COVID19-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-COVID19-umbrella.h"; sourceTree = "<group>"; };
-		8CB658FCF0CA6102A4B78FF2213DD5C2 /* Dropper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dropper.release.xcconfig; sourceTree = "<group>"; };
-		8CE093DA93AD5DB6C756282564C2E601 /* Dropper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dropper-dummy.m"; sourceTree = "<group>"; };
+		7849277DB93C8B5594F64315C463FD10 /* EFCountingLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EFCountingLabel-Info.plist"; sourceTree = "<group>"; };
+		80B927CD46D70FC50B4562CC8321B0FD /* DropperExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropperExtensions.swift; path = Pod/Classes/DropperExtensions.swift; sourceTree = "<group>"; };
+		8CBCA8383C56BA78D14CEFBE77B20B43 /* EFTimingMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EFTimingMethod.swift; path = EFCountingLabel/EFTimingMethod.swift; sourceTree = "<group>"; };
 		936A910B0DB6D4E6B37FC43E3786FB99 /* Dropper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Dropper.framework; path = Dropper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99441267E839C2E69A6A188A8FE53DAB /* Pods-COVID19-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-COVID19-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F90718EDCF1231A917B8D9B79718BEA /* EFCountingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EFCountingLabel.modulemap; sourceTree = "<group>"; };
 		A7E41153C9B85EBBCBA8A03C4604EC18 /* Pods_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_COVID19.framework; path = "Pods-COVID19.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92A75A1C3D4985486E38FAC3EDEF92D /* Pods-COVID19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-COVID19.release.xcconfig"; sourceTree = "<group>"; };
-		D38DFC0E97EC7D881470F9C75B13E9CF /* Dropper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dropper-prefix.pch"; sourceTree = "<group>"; };
+		C003576A26CC8BBA6D4BD17C485BC6D9 /* Dropper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dropper.debug.xcconfig; sourceTree = "<group>"; };
+		C5485AA600CFBCE9FFD77104B27D4E57 /* Dropper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dropper.swift; path = Pod/Classes/Dropper.swift; sourceTree = "<group>"; };
+		DA2778F2EE5E419E93F01E322166D4D2 /* DropperDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropperDelegate.swift; path = Pod/Classes/DropperDelegate.swift; sourceTree = "<group>"; };
+		DB013DD6DF4257461C4878E436A2D20C /* EFCountingLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EFCountingLabel.debug.xcconfig; sourceTree = "<group>"; };
+		F0300E7368AAAE5F1B2DCBC7A78D3A6B /* EFCountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EFCountingLabel-dummy.m"; sourceTree = "<group>"; };
+		F3B85768F643FA500BB73C365401BEF7 /* Dropper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dropper-umbrella.h"; sourceTree = "<group>"; };
+		F9369AB2E1F48EE2CA1C888D1969BBD4 /* Dropper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dropper-prefix.pch"; sourceTree = "<group>"; };
+		FE435B455CB2C3C6C3A46C0A051B5B9B /* EFCountAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EFCountAdapter.swift; path = EFCountingLabel/EFCountAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D11C1CED13F1220FA4AEDDCB279EBDD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C0058F156BEFABE9B73E7B6D11A2973B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8F6D9BAE0C14B02EA1440F5AD1229B8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,28 +89,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB16A961AF71C3300E0D6DDE89098B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779757D3F9844E1C30FAD17FB2924E5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B470023E252E235D6D04AEA2E18530FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC54E51ECD6D08BC366578BA4E7982A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		41D25E76C47E5C36268DBCBEBA843CA3 /* Pods */ = {
+		4C39314BF0CED8C925DBAE80DDB5403D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				62861F8FF63705E8E36F045F8BDE53ED /* Dropper */,
+				9F90718EDCF1231A917B8D9B79718BEA /* EFCountingLabel.modulemap */,
+				F0300E7368AAAE5F1B2DCBC7A78D3A6B /* EFCountingLabel-dummy.m */,
+				7849277DB93C8B5594F64315C463FD10 /* EFCountingLabel-Info.plist */,
+				50A5F4815534C241368EF05788E56561 /* EFCountingLabel-prefix.pch */,
+				1D5F4465BB6E76310CC5B3E5D7C11331 /* EFCountingLabel-umbrella.h */,
+				DB013DD6DF4257461C4878E436A2D20C /* EFCountingLabel.debug.xcconfig */,
+				6985D0DDB110031B535573348B2642B3 /* EFCountingLabel.release.xcconfig */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		62861F8FF63705E8E36F045F8BDE53ED /* Dropper */ = {
-			isa = PBXGroup;
-			children = (
-				55323CB2FBC25271789B429EBEE9199B /* Dropper.swift */,
-				395DC73D4D6F61C405F1025A0C4EC594 /* DropperCell.swift */,
-				3761F85A43DE856A114102F93B3F9874 /* DropperDelegate.swift */,
-				28D3E6A1DCD62DC98324BE051DEE51BE /* DropperExtensions.swift */,
-				E7412DE9EFCA30481CB2EC25C3F3E05A /* Support Files */,
-			);
-			name = Dropper;
-			path = Dropper;
+			name = "Support Files";
+			path = "../Target Support Files/EFCountingLabel";
 			sourceTree = "<group>";
 		};
 		A296372171249CBF2A87157885B848AF /* Targets Support Files */ = {
@@ -105,6 +131,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		A4C031FC8324506CBBB5CF794895F2CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FADFE6FB5E4A4C462DA2678FE6FC070A /* Dropper */,
+				D7970A48685CC0CCAF85E27342618F34 /* EFCountingLabel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,13 +148,28 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		CD4781DB5112CAEFA5499BECA887BB28 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EC277D878963CAF123E2DBA6283D8F7 /* Dropper.modulemap */,
+				5671DE0E5B5D263D1A7029D09E808186 /* Dropper-dummy.m */,
+				3099A6F258C420B8E89D3BF8261ED941 /* Dropper-Info.plist */,
+				F9369AB2E1F48EE2CA1C888D1969BBD4 /* Dropper-prefix.pch */,
+				F3B85768F643FA500BB73C365401BEF7 /* Dropper-umbrella.h */,
+				C003576A26CC8BBA6D4BD17C485BC6D9 /* Dropper.debug.xcconfig */,
+				3313C0375D0F1D130DEF5C71988C8596 /* Dropper.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Dropper";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				41D25E76C47E5C36268DBCBEBA843CA3 /* Pods */,
-				F025B5E1EDE761508B3C3C8CA9901325 /* Products */,
+				A4C031FC8324506CBBB5CF794895F2CD /* Pods */,
+				DF7F9DC65D7E057E964836FE3D281CA0 /* Products */,
 				A296372171249CBF2A87157885B848AF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -132,28 +182,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E7412DE9EFCA30481CB2EC25C3F3E05A /* Support Files */ = {
+		D7970A48685CC0CCAF85E27342618F34 /* EFCountingLabel */ = {
 			isa = PBXGroup;
 			children = (
-				28E0ABCF0DC7DE6CF8A8319062658F0A /* Dropper.modulemap */,
-				8CE093DA93AD5DB6C756282564C2E601 /* Dropper-dummy.m */,
-				25B15A7C68649A5C1F95D6EEDD954377 /* Dropper-Info.plist */,
-				D38DFC0E97EC7D881470F9C75B13E9CF /* Dropper-prefix.pch */,
-				52E725AADC5C8BCF112E00A3CDCDD1A7 /* Dropper-umbrella.h */,
-				21FB0A9CBEF291EC6A86AD6280918C8C /* Dropper.debug.xcconfig */,
-				8CB658FCF0CA6102A4B78FF2213DD5C2 /* Dropper.release.xcconfig */,
+				0994364E1E0325318C25858D7E91A3D8 /* EFCount.swift */,
+				FE435B455CB2C3C6C3A46C0A051B5B9B /* EFCountAdapter.swift */,
+				8CBCA8383C56BA78D14CEFBE77B20B43 /* EFTimingMethod.swift */,
+				4C39314BF0CED8C925DBAE80DDB5403D /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Dropper";
+			name = EFCountingLabel;
+			path = EFCountingLabel;
 			sourceTree = "<group>";
 		};
-		F025B5E1EDE761508B3C3C8CA9901325 /* Products */ = {
+		DF7F9DC65D7E057E964836FE3D281CA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				936A910B0DB6D4E6B37FC43E3786FB99 /* Dropper.framework */,
+				5EBFFBCF9E56DA4AF71E6A1981521E28 /* EFCountingLabel.framework */,
 				A7E41153C9B85EBBCBA8A03C4604EC18 /* Pods_COVID19.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FADFE6FB5E4A4C462DA2678FE6FC070A /* Dropper */ = {
+			isa = PBXGroup;
+			children = (
+				C5485AA600CFBCE9FFD77104B27D4E57 /* Dropper.swift */,
+				5DCE05181FBD1A5FEDE5A05147C65F8F /* DropperCell.swift */,
+				DA2778F2EE5E419E93F01E322166D4D2 /* DropperDelegate.swift */,
+				80B927CD46D70FC50B4562CC8321B0FD /* DropperExtensions.swift */,
+				CD4781DB5112CAEFA5499BECA887BB28 /* Support Files */,
+			);
+			name = Dropper;
+			path = Dropper;
 			sourceTree = "<group>";
 		};
 		FC8639EA6AA60E3C3697BB92E9E8960F /* Pods-COVID19 */ = {
@@ -176,11 +237,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1A7DEF0F3684908036BBAB38CC85EC62 /* Headers */ = {
+		1C6B97ECFE5D5D28BBC9542CEBA9D902 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC5734319232ED4679F418E63059CE1F /* Pods-COVID19-umbrella.h in Headers */,
+				2A2AC199E504660604EDA6DAB86EBF9E /* EFCountingLabel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED6BF906E8DCD760096DE8D3FFAE91A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBDB7780D713086859E803DB70A07FFB /* Pods-COVID19-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,21 +284,40 @@
 		};
 		4E414667A820E8375D6377B3F7C7824E /* Pods-COVID19 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 14846EEB9F28DA67834AAE4CC72F3A41 /* Build configuration list for PBXNativeTarget "Pods-COVID19" */;
+			buildConfigurationList = 87FFA3B587CF9A186F6B842A2C1FA11D /* Build configuration list for PBXNativeTarget "Pods-COVID19" */;
 			buildPhases = (
-				1A7DEF0F3684908036BBAB38CC85EC62 /* Headers */,
-				940BE9DF313A2B6C5200E3DBA8307697 /* Sources */,
-				1D11C1CED13F1220FA4AEDDCB279EBDD /* Frameworks */,
-				76B644C15ABF6E8EE036B4A6F418BB0C /* Resources */,
+				1ED6BF906E8DCD760096DE8D3FFAE91A /* Headers */,
+				523EA7E16532B2D5FDCBF93499CCDAC8 /* Sources */,
+				AB16A961AF71C3300E0D6DDE89098B06 /* Frameworks */,
+				217DF781F2C894BC5137457AE9BDB4CA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				679436B51C08BF75C2464AEA98279C8D /* PBXTargetDependency */,
+				19079A185FB57E0F1AAECC40B4E1FD48 /* PBXTargetDependency */,
+				E9338895DFE3D347EA77CFEAB7AC131D /* PBXTargetDependency */,
 			);
 			name = "Pods-COVID19";
 			productName = "Pods-COVID19";
 			productReference = A7E41153C9B85EBBCBA8A03C4604EC18 /* Pods_COVID19.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8D87E5A9FC1F8F56498963BEA9EDFE7A /* EFCountingLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14114E04A57A6E889A8AB768089F3FF2 /* Build configuration list for PBXNativeTarget "EFCountingLabel" */;
+			buildPhases = (
+				1C6B97ECFE5D5D28BBC9542CEBA9D902 /* Headers */,
+				FF4C03218B39446A6E0B97C35A28345F /* Sources */,
+				B470023E252E235D6D04AEA2E18530FF /* Frameworks */,
+				504078AF28E44AC7EC62FB7174169BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EFCountingLabel;
+			productName = EFCountingLabel;
+			productReference = 5EBFFBCF9E56DA4AF71E6A1981521E28 /* EFCountingLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +330,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -250,18 +338,26 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F025B5E1EDE761508B3C3C8CA9901325 /* Products */;
+			productRefGroup = DF7F9DC65D7E057E964836FE3D281CA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				369974F7679ED5F4856B88F12F76F820 /* Dropper */,
+				8D87E5A9FC1F8F56498963BEA9EDFE7A /* EFCountingLabel */,
 				4E414667A820E8375D6377B3F7C7824E /* Pods-COVID19 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		76B644C15ABF6E8EE036B4A6F418BB0C /* Resources */ = {
+		217DF781F2C894BC5137457AE9BDB4CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504078AF28E44AC7EC62FB7174169BA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,29 +386,83 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		940BE9DF313A2B6C5200E3DBA8307697 /* Sources */ = {
+		523EA7E16532B2D5FDCBF93499CCDAC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB46872D19E096AA963AADCA6937BF2 /* Pods-COVID19-dummy.m in Sources */,
+				58E8F46170F0BA6E334BDA7AD5F60C40 /* Pods-COVID19-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF4C03218B39446A6E0B97C35A28345F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CC468D5BDEC9EAA4783B2833844C16C /* EFCount.swift in Sources */,
+				B0B01BF9248C17F961CFD2AA033A6CBD /* EFCountAdapter.swift in Sources */,
+				4F334D216196E032FB47C2E3A5872704 /* EFCountingLabel-dummy.m in Sources */,
+				80D80F83B6B48AC874579ECAB0AF470A /* EFTimingMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		679436B51C08BF75C2464AEA98279C8D /* PBXTargetDependency */ = {
+		19079A185FB57E0F1AAECC40B4E1FD48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Dropper;
 			target = 369974F7679ED5F4856B88F12F76F820 /* Dropper */;
-			targetProxy = 14C72E0103610B0CC432B528C848D30B /* PBXContainerItemProxy */;
+			targetProxy = 249E15157FF7110EE31D37ECA09F001D /* PBXContainerItemProxy */;
+		};
+		E9338895DFE3D347EA77CFEAB7AC131D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EFCountingLabel;
+			target = 8D87E5A9FC1F8F56498963BEA9EDFE7A /* EFCountingLabel */;
+			targetProxy = 3AEB3F714087725CC39BD9A23BF23661 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2447BF84953326831A09F1CD9F6D58E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 657805EF045F594DB839E0F97CD61CC0 /* Pods-COVID19.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		338DCF6F86BA12DDB40BF0FE246D43E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21FB0A9CBEF291EC6A86AD6280918C8C /* Dropper.debug.xcconfig */;
+			baseConfigurationReference = C003576A26CC8BBA6D4BD17C485BC6D9 /* Dropper.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -344,6 +494,115 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		6A22E900426CBE3BDE41382DCF8DADDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A92A75A1C3D4985486E38FAC3EDEF92D /* Pods-COVID19.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71058137FDA9DD2290B980A97A992828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB013DD6DF4257461C4878E436A2D20C /* EFCountingLabel.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EFCountingLabel/EFCountingLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EFCountingLabel/EFCountingLabel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EFCountingLabel/EFCountingLabel.modulemap";
+				PRODUCT_MODULE_NAME = EFCountingLabel;
+				PRODUCT_NAME = EFCountingLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8465EDD0167CED1EA8422A513CAA453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6985D0DDB110031B535573348B2642B3 /* EFCountingLabel.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EFCountingLabel/EFCountingLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EFCountingLabel/EFCountingLabel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EFCountingLabel/EFCountingLabel.modulemap";
+				PRODUCT_MODULE_NAME = EFCountingLabel;
+				PRODUCT_NAME = EFCountingLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -471,7 +730,7 @@
 		};
 		D0756B7632080E41681E3C91790DB8A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB658FCF0CA6102A4B78FF2213DD5C2 /* Dropper.release.xcconfig */;
+			baseConfigurationReference = 3313C0375D0F1D130DEF5C71988C8596 /* Dropper.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -505,89 +764,14 @@
 			};
 			name = Release;
 		};
-		D5DCD2446E6976B7021A86C66C128142 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 657805EF045F594DB839E0F97CD61CC0 /* Pods-COVID19.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F2372FBF3FE25E1F984C029980F9FE91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A92A75A1C3D4985486E38FAC3EDEF92D /* Pods-COVID19.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-COVID19/Pods-COVID19.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14846EEB9F28DA67834AAE4CC72F3A41 /* Build configuration list for PBXNativeTarget "Pods-COVID19" */ = {
+		14114E04A57A6E889A8AB768089F3FF2 /* Build configuration list for PBXNativeTarget "EFCountingLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5DCD2446E6976B7021A86C66C128142 /* Debug */,
-				F2372FBF3FE25E1F984C029980F9FE91 /* Release */,
+				71058137FDA9DD2290B980A97A992828 /* Debug */,
+				8465EDD0167CED1EA8422A513CAA453C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -606,6 +790,15 @@
 			buildConfigurations = (
 				916E0404255105F480DC4950B7625F7A /* Debug */,
 				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87FFA3B587CF9A186F6B842A2C1FA11D /* Build configuration list for PBXNativeTarget "Pods-COVID19" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2447BF84953326831A09F1CD9F6D58E9 /* Debug */,
+				6A22E900426CBE3BDE41382DCF8DADDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

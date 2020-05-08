@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D1EC80F245C3DA100D49082 /* CaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EC80E245C3DA100D49082 /* CaseData.swift */; };
 		4D52A452245C34030024574C /* CaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52A451245C34030024574C /* CaseManager.swift */; };
+		4DA3B3672465A23600509AED /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3B3662465A23600509AED /* Flags.xcassets */; };
 		4DCF1721245D8F770015EAFB /* CaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF1720245D8F770015EAFB /* CaseModel.swift */; };
 		88AD0F831F4D54B1D6E33EB9 /* Pods_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68702981958969AF37ECB48 /* Pods_COVID19.framework */; };
 		ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B0231BBFAF00365194 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		4D1EC80E245C3DA100D49082 /* CaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseData.swift; sourceTree = "<group>"; };
 		4D52A451245C34030024574C /* CaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseManager.swift; sourceTree = "<group>"; };
+		4DA3B3662465A23600509AED /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
 		4DCF1720245D8F770015EAFB /* CaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseModel.swift; sourceTree = "<group>"; };
 		79BC61740D631F610D0777C8 /* Pods-COVID19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID19.release.xcconfig"; path = "Target Support Files/Pods-COVID19/Pods-COVID19.release.xcconfig"; sourceTree = "<group>"; };
 		A68702981958969AF37ECB48 /* Pods_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				ADAA27C9231BC3F200365194 /* View */,
 				ADAA27C8231BC3E500365194 /* Controller */,
 				ADAA27B9231BBFB300365194 /* Assets.xcassets */,
+				4DA3B3662465A23600509AED /* Flags.xcassets */,
 				ADAA27BB231BBFB300365194 /* LaunchScreen.storyboard */,
 				ADAA27BE231BBFB300365194 /* Info.plist */,
 			);
@@ -187,6 +190,7 @@
 				ADAA27BD231BBFB300365194 /* LaunchScreen.storyboard in Resources */,
 				ADAA27BA231BBFB300365194 /* Assets.xcassets in Resources */,
 				ADAA27B8231BBFAF00365194 /* Main.storyboard in Resources */,
+				4DA3B3672465A23600509AED /* Flags.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = Covid19/Flags.xcassets;
 				INFOPLIST_FILE = Covid19/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = Covid19/Flags.xcassets;
 				INFOPLIST_FILE = Covid19/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

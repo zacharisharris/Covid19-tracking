@@ -9,7 +9,20 @@
 import Foundation
 
 struct CaseModel {
-    let recoveredCases: String
-    let confirmedCases : String
-    let deaths : String
+    let recoveredCases: Int
+    let confirmedCases : Int
+    let deathCases : Int
+    
+    var confirmed : Float {
+        return Float(confirmedCases)
+    }
+    
+    var recovered : Float {
+        return Float(recoveredCases)
+    }
+    
+    var deaths : Float {
+        return Float(deathCases)
+    }
+    
 }

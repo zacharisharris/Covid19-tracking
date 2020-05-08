@@ -1,16 +1,20 @@
 PODS:
   - Dropper (2.7.6)
+  - EFCountingLabel (5.1.1)
 
 DEPENDENCIES:
   - Dropper
+  - EFCountingLabel
 
 SPEC REPOS:
   trunk:
     - Dropper
+    - EFCountingLabel
 
 SPEC CHECKSUMS:
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
+  EFCountingLabel: 605358591a67a3c92feb7ec32486bfab4a30e2c9
 
-PODFILE CHECKSUM: 58c3a688f0007ad915b5dbfdd88e71d4209bce44
+PODFILE CHECKSUM: ea8af9b3902f7ee2a9d220e6a1dcd899185c4068
 
 COCOAPODS: 1.9.1

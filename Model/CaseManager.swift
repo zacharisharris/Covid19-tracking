@@ -54,10 +54,10 @@ struct CaseManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(CaseData.self, from: caseData)
-            let confirmedCases = decodedData.cases.formattedWithSeparator
-            let recoveredCases = decodedData.recovered.formattedWithSeparator
-            let deaths = decodedData.deaths.formattedWithSeparator
-            let countryCases = CaseModel(recoveredCases: recoveredCases, confirmedCases: confirmedCases, deaths: deaths)
+            let confirmedCases = decodedData.cases
+            let recoveredCases = decodedData.recovered
+            let deaths = decodedData.deaths
+            let countryCases = CaseModel(recoveredCases: recoveredCases, confirmedCases: confirmedCases, deathCases: deaths)
             return countryCases
         } catch {
             delegate?.didFailWithError(error: error)
@@ -81,7 +81,7 @@ extension Formatter {
 
 //MARK: - Int Formatter Extension
 
-extension Int{
+extension Float{
     var formattedWithSeparator: String {
         return Formatter.withSeparator.string(for: self) ?? ""
     }

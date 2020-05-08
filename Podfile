@@ -5,5 +5,6 @@ target 'COVID19' do
 
   # Pods for COVID19
   pod 'Dropper'
+  pod 'EFCountingLabel'
 
 end
