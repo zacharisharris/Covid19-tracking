@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CountryModel {
+struct CountryModel: Codable {
     var code: String
     var name: String
     var flagName: String

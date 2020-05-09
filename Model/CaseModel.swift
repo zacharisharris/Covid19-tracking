@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CaseModel {
+struct CaseModel: Codable {
     let recoveredCases: Int
     let confirmedCases : Int
     let deathCases : Int

@@ -15,6 +15,8 @@ class CaseViewController: UIViewController {
     var caseManager = CaseManager()
     let dropper = Dropper(width: 125, height: 100)
     lazy var countries = makeCountries()
+    let defaults = UserDefaults.standard
+
     
     @IBOutlet weak var countryButton: UIButton!
     @IBOutlet weak var recoveredLabel: EFCountingLabel!
@@ -29,16 +31,16 @@ class CaseViewController: UIViewController {
         super.viewDidLoad()
         
         setUpdateBlocks()
-        
+        retrieveUserData()
         // Timer for blinker
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.animateBlinkers), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.animateBlips), userInfo: nil, repeats: true)
         
         
         dropper.delegate = self // Insert this before you show your Dropper
         caseManager.delegate = self        
     }
     
-    @objc func animateBlinkers(){
+    @objc func animateBlips(){
         UIView.animate(withDuration: 2.0) {
             self.orangeBlinkImage.alpha = self.orangeBlinkImage.alpha == 1.0 ? 0.0 : 1.0
             self.redBlinkImage.alpha = self.redBlinkImage.alpha == 1.0 ? 0.0 : 1.0
@@ -89,7 +91,6 @@ class CaseViewController: UIViewController {
         recoveredLabel.setUpdateBlock { value, label in
             label.text = String(format: "%.0f", value)
         }
-        
     }
     
     
@@ -158,6 +159,41 @@ extension CaseViewController: DropperDelegate {
         countryButton.setTitle(countryName, for: .normal)
         countryButton.setImage(country.flag, for: .normal)
         getUpdateTime()
+        saveCountryData(country)
+    }
+    
+    private func saveCaseData(_ cases: CaseModel) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(cases) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "SavedCases")
+        }
+    }
+    
+    private func saveCountryData(_ country: CountryModel) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(country) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "SavedCountry")
+        }
+    }
+    
+    private func retrieveUserData() {
+        if let savedCountry = defaults.object(forKey: "SavedCountry") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedCountry = try? decoder.decode(CountryModel.self, from: savedCountry) {
+                countryButton.setTitle(loadedCountry.name, for: .normal)
+                countryButton.setImage(loadedCountry.flag, for: .normal)
+            }
+        }
+        
+        if let savedCases = defaults.object(forKey: "SavedCases") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedCases = try? decoder.decode(CaseModel.self, from: savedCases) {
+                self.confirmedLabel.text = Formatter.withSeparator.string(for: loadedCases.confirmedCases) ?? ""
+                
+            }
+        }
     }
     
     private func countryNames() -> [String] {
@@ -186,23 +222,9 @@ extension CaseViewController: CaseManagerDelegate {
             self.confirmedLabel.countFromCurrentValueTo(CGFloat(cases.confirmed))
             self.deathsLabel.countFromCurrentValueTo(CGFloat(cases.deaths))
             self.recoveredLabel.countFromCurrentValueTo(CGFloat(cases.recovered))
+            self.saveCaseData(cases)
+            
         }
         
     }
 }
-
-//MARK: - Locale Methods
-
-private func locale(for fullCountryName : String) -> String {
-    let locales : String = ""
-    for localeCode in NSLocale.isoCountryCodes {
-        let identifier = NSLocale(localeIdentifier: Locale.current.identifier)
-        let countryName = identifier.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)
-        if fullCountryName.lowercased() == countryName?.lowercased() {
-            print("ISO Code: \(localeCode)")
-            return localeCode
-        }
-    }
-    return locales
-}
-
