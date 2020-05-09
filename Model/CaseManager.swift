@@ -20,8 +20,8 @@ struct CaseManager {
     var delegate: CaseManagerDelegate?
     
     
-    func fetchCases(countryName: String) {
-        let urlString = "\(caseURL)/\(countryName)"
+    func fetchCases(countryCode: String) {
+        let urlString = "\(caseURL)/\(countryCode)"
         performRequest(urlString)
         print(urlString)
     }

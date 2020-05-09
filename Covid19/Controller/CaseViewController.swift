@@ -14,7 +14,7 @@ class CaseViewController: UIViewController {
     
     var caseManager = CaseManager()
     let dropper = Dropper(width: 125, height: 100)
-    var countries: [String] = []
+    lazy var countries = makeCountries()
     
     @IBOutlet weak var countryButton: UIButton!
     @IBOutlet weak var recoveredLabel: EFCountingLabel!
@@ -28,7 +28,6 @@ class CaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        makeCountries()
         setUpdateBlocks()
         
         // Timer for blinker
@@ -93,15 +92,26 @@ class CaseViewController: UIViewController {
         
     }
     
-    func makeCountries(){
-        //Returns an array of country names
-        
-        for localeCode in NSLocale.isoCountryCodes  {
-            let countryName = NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.countryCode, value: localeCode) ?? "Country not found for code: \(localeCode)"
-            countries.append(countryName)
-        }
-    }
     
+    func makeCountries() -> [CountryModel] {
+        var countries = [CountryModel]()
+        for code in NSLocale.isoCountryCodes {
+            var countryName = NSLocale.autoupdatingCurrent.localizedString(forRegionCode: code)
+            if countryName == nil {
+                countryName = code
+            }
+            if let countryName = countryName {
+                countries.append(CountryModel(code: code, name: countryName, flagName: code.uppercased()))
+            }
+        }
+        
+        countries.sort(by: { l, r in
+        return l.name < r.name
+        })
+        
+        return countries
+    }
+
     func getUpdateTime() {
         let currentDateTime = Date()
         let formatter = DateFormatter()
@@ -121,7 +131,7 @@ extension CaseViewController: DropperDelegate {
         if dropper.status == .hidden {
             dropper.maxHeight = 200
             dropper.width = 325
-            dropper.items = countries // Items to be displayed
+            dropper.items = countryNames() // Items to be displayed
             dropper.theme = Dropper.Themes.black(nil)
             dropper.cornerRadius = 10
             dropper.showWithAnimation(0.15, options: Dropper.Alignment.center, button: countryButton)
@@ -131,15 +141,28 @@ extension CaseViewController: DropperDelegate {
     }
     
     func DropperSelectedRow(_ path: IndexPath, contents: String) {
-        let trimmedContents = contents.replacingOccurrences(of: " ", with: "%20")
-        print(trimmedContents)
-        caseManager.fetchCases(countryName: trimmedContents)
-        countryButton.setTitle(contents, for: .normal)
-        countryButton.setImage(UIImage(named: "\(locale(for: contents)).png"), for: .normal)
-        if countryButton.imageView == nil { countryButton.setImage(UIImage(named: "marker.png"), for: .normal) }
+        let row = path.row
+        let country = countries[row]
+        didSelectCountry(country)
+    }
+    
+//    func searchFor(_ countryName: String) -> CountryModel? {
+//        return countries.first(where: {$0.name == countryName})
+//    }
+    
+    private func didSelectCountry(_ country: CountryModel) {
+        let countryName = country.name
+        let countryCode = country.code
+        
+        caseManager.fetchCases(countryCode: countryCode)
+        countryButton.setTitle(countryName, for: .normal)
+        countryButton.setImage(country.flag, for: .normal)
         getUpdateTime()
     }
     
+    private func countryNames() -> [String] {
+        return countries.map({$0.name})
+    }
 }
 
 //MARK: - CaseManager Delegate Methods
@@ -182,3 +205,4 @@ private func locale(for fullCountryName : String) -> String {
     }
     return locales
 }
+
