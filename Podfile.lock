@@ -1,20 +1,24 @@
 PODS:
+  - CountryPickerView (3.1.2)
   - Dropper (2.7.6)
   - EFCountingLabel (5.1.1)
 
 DEPENDENCIES:
+  - CountryPickerView
   - Dropper
   - EFCountingLabel
 
 SPEC REPOS:
   trunk:
+    - CountryPickerView
     - Dropper
     - EFCountingLabel
 
 SPEC CHECKSUMS:
+  CountryPickerView: 08ff5f391143aa79e2ae21b0eaa5c15395a80d22
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
   EFCountingLabel: 605358591a67a3c92feb7ec32486bfab4a30e2c9
 
-PODFILE CHECKSUM: ea8af9b3902f7ee2a9d220e6a1dcd899185c4068
+PODFILE CHECKSUM: 092a3d9a4b01433ff1fea9b11f4dfcbd00e73fa6
 
 COCOAPODS: 1.9.1
