@@ -7,18 +7,17 @@
 //
 
 import UIKit
-import Dropper
+import CountryPickerView
 import EFCountingLabel
 
-class CaseViewController: UIViewController {
+class CaseViewController: UIViewController{
     
     var caseManager = CaseManager()
-    let dropper = Dropper(width: 125, height: 100)
-    lazy var countries = makeCountries()
     let defaults = UserDefaults.standard
     lazy private var numberFormatter = makeNumberFormatter()
-
     
+    
+    @IBOutlet weak var countryPickerView: CountryPickerView!
     @IBOutlet weak var countryButton: UIButton!
     @IBOutlet weak var recoveredLabel: EFCountingLabel!
     @IBOutlet weak var deathsLabel: EFCountingLabel!
@@ -29,23 +28,26 @@ class CaseViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()	
+        super.viewDidLoad()
         
-//        setUpdateBlocks()
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        caseManager.delegate = self
+        
         retrieveUserData()
+        
         // Timer for blinker
         Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.animateBlips), userInfo: nil, repeats: true)
         
         
-        dropper.delegate = self // Insert this before you show your Dropper
-        caseManager.delegate = self        
     }
     
     func makeNumberFormatter() -> NumberFormatter {
         let formatter = NumberFormatter()
+        formatter.locale = Locale.current
         formatter.usesSignificantDigits = false
         formatter.usesGroupingSeparator = true
-        formatter.groupingSeparator = "."
+        formatter.groupingSize = 3
         return formatter
     }
     
@@ -76,22 +78,7 @@ class CaseViewController: UIViewController {
             }
         }
     }
-
-    func makeCountries() -> [CountryModel] {
-        var countries = [CountryModel]()
-        for code in NSLocale.isoCountryCodes {
-            var countryName = NSLocale.autoupdatingCurrent.localizedString(forRegionCode: code)
-            if countryName == nil {
-                countryName = code
-            }
-            if let countryName = countryName {
-                countries.append(CountryModel(code: code, name: countryName, flagName: code.uppercased()))
-            }
-        }
-        countries.sort(by: { l, r in return l.name < r.name})
-        return countries
-    }
-
+    
     func getUpdateTime() {
         let currentDateTime = Date()
         let formatter = DateFormatter()
@@ -103,87 +90,67 @@ class CaseViewController: UIViewController {
     }
 }
 
-//MARK: - Dropper Delegate Methods
+//MARK: - CountryPickerView Delegate Methods
 
-extension CaseViewController: DropperDelegate {
+extension CaseViewController: CountryPickerViewDelegate, CountryPickerViewDataSource {
     
-    @IBAction func DropdownAction() {
-        if dropper.status == .hidden {
-            dropper.maxHeight = 200
-            dropper.width = 325
-            dropper.items = countryNames() // Items to be displayed
-            dropper.theme = Dropper.Themes.black(nil)
-            dropper.cornerRadius = 10
-            dropper.showWithAnimation(0.15, options: Dropper.Alignment.center, button: countryButton)
-        } else {
-            dropper.hideWithAnimation(0.1)
-        }
+    
+    @IBAction func showCountryList(_ sender: Any) {
+        countryPickerView.showCountriesList(from: self)
     }
     
-    func DropperSelectedRow(_ path: IndexPath, contents: String) {
-        let row = path.row
-        let country = countries[row]
-        didSelectCountry(country)
-    }
     
-//    func searchFor(_ countryName: String) -> CountryModel? {
-//        return countries.first(where: {$0.name == countryName})
-//    }
-    
-    private func didSelectCountry(_ country: CountryModel) {
-        let countryName = country.name
-        let countryCode = country.code
+    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         
-        caseManager.fetchCases(countryCode: countryCode)
-        countryButton.setTitle(countryName, for: .normal)
+        caseManager.fetchCases(countryCode: country.code)
+        countryButton.setTitle(country.name, for: .normal)
         countryButton.setImage(country.flag, for: .normal)
         getUpdateTime()
         saveCountryData(country)
+        
     }
-
+    
+    //    func searchFor(_ countryName: String) -> CountryModel? {
+    //        return countries.first(where: {$0.name == countryName})
+    //    }
     
     //TODO: Add updateLabels function & separated Labels functions
     
-    private func countryNames() -> [String] {
-        return countries.map({$0.name})
-    }
-
-//MARK: - User Defaults
-
-
-private func saveCaseData(_ cases: CaseModel) {
-    let encoder = JSONEncoder()
-    if let encoded = try? encoder.encode(cases) {
-        let defaults = UserDefaults.standard
-        defaults.set(encoded, forKey: "SavedCases")
-    }
-}
-
-private func saveCountryData(_ country: CountryModel) {
-    let encoder = JSONEncoder()
-    if let encoded = try? encoder.encode(country) {
-        let defaults = UserDefaults.standard
-        defaults.set(encoded, forKey: "SavedCountry")
-    }
-}
-
-private func retrieveUserData() {
-    let decoder = JSONDecoder()
-    if let savedCountry = defaults.object(forKey: "SavedCountry") as? Data {
-        if let loadedCountry = try? decoder.decode(CountryModel.self, from: savedCountry) {
-            countryButton.setTitle(loadedCountry.name, for: .normal)
-            countryButton.setImage(loadedCountry.flag, for: .normal)
+    //MARK: - User Defaults
+    
+    private func saveCaseData(_ cases: CaseModel) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(cases) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "SavedCases")
         }
     }
     
-    if let savedCases = defaults.object(forKey: "SavedCases") as? Data {
-        if let loadedCases = try? decoder.decode(CaseModel.self, from: savedCases) {
-            self.confirmedLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.confirmedCases))
-            self.deathsLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.deathCases))
-            self.recoveredLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.recoveredCases))
+    private func saveCountryData(_ country: Country) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(country) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "SavedCountry")
         }
     }
-}
+    
+    private func retrieveUserData() {
+        let decoder = JSONDecoder()
+        if let savedCountry = defaults.object(forKey: "SavedCountry") as? Data {
+            if let loadedCountry = try? decoder.decode(Country.self, from: savedCountry) {
+                countryButton.setTitle(loadedCountry.name, for: .normal)
+                countryButton.setImage(loadedCountry.flag, for: .normal)
+            }
+        }
+        
+        if let savedCases = defaults.object(forKey: "SavedCases") as? Data {
+            if let loadedCases = try? decoder.decode(CaseModel.self, from: savedCases) {
+                self.confirmedLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.confirmedCases))
+                self.deathsLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.deathCases))
+                self.recoveredLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.recoveredCases))
+            }
+        }
+    }
 }
 
 //MARK: - CaseManager Delegate Methods
@@ -196,7 +163,7 @@ extension CaseViewController: CaseManagerDelegate {
             self.deathsLabel.text = "N/A"
             self.recoveredLabel.text = "N/A"
         }
-            print(error)
+        print(error)
     }
     
     func didUpdateCases(cases: CaseModel) {
@@ -212,7 +179,7 @@ extension CaseViewController: CaseManagerDelegate {
     }
     
     //MARK: - Might be removed
-
+    
     func setUpdateBlocks() {
         confirmedLabel.setUpdateBlock { [weak self] value, label in
             label.text = self?.numberFormatter.string(from: NSNumber(value: Float(value)))

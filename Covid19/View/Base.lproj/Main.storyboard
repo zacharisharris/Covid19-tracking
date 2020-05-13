@@ -15,6 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q34-fv-vsX" customClass="CountryPickerView" customModule="CountryPickerView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvA-Ao-goO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="213"/>
                                 <subviews>
@@ -133,7 +138,7 @@
                                             </preferredSymbolConfiguration>
                                         </state>
                                         <connections>
-                                            <action selector="DropdownAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRv-8R-fyD"/>
+                                            <action selector="showCountryList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yI-e1-268"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -250,6 +255,7 @@
                     <connections>
                         <outlet property="confirmedLabel" destination="6pM-SY-Q9z" id="2Bc-UF-oWZ"/>
                         <outlet property="countryButton" destination="fca-gU-G7M" id="War-36-FYN"/>
+                        <outlet property="countryPickerView" destination="q34-fv-vsX" id="IRf-hW-qpg"/>
                         <outlet property="deathsLabel" destination="1PC-ec-nHd" id="Rke-Mz-SiJ"/>
                         <outlet property="greenBlinkImage" destination="R3R-mg-LV4" id="W0R-fm-6BL"/>
                         <outlet property="orangeBlinkImage" destination="nIq-mz-Wxa" id="ZMf-nN-0dZ"/>

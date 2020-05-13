@@ -14,7 +14,7 @@ public enum SearchBarPosition {
     case tableViewHeader, navigationBar, hidden
 }
 
-public struct Country: Equatable {
+public struct Country: Equatable, Codable {
     public let name: String
     public let code: String
     public let phoneCode: String
