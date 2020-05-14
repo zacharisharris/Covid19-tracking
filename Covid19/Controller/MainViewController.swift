@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  COVID19
 //
 //  Created by Harris Zacharis on 1/5/20.
@@ -10,13 +10,14 @@ import UIKit
 import CountryPickerView
 import EFCountingLabel
 
-class CaseViewController: UIViewController{
+class MainViewController: UIViewController {
     
     var caseManager = CaseManager()
     let defaults = UserDefaults.standard
     lazy private var numberFormatter = makeNumberFormatter()
+    var favorites : [Country] = []
     
-    
+
     @IBOutlet weak var countryPickerView: CountryPickerView!
     @IBOutlet weak var countryButton: UIButton!
     @IBOutlet weak var recoveredLabel: EFCountingLabel!
@@ -36,10 +37,8 @@ class CaseViewController: UIViewController{
         
         retrieveUserData()
         
-        // Timer for blinker
+        // Timer for blips
         Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.animateBlips), userInfo: nil, repeats: true)
-        
-        
     }
     
     func makeNumberFormatter() -> NumberFormatter {
@@ -50,6 +49,24 @@ class CaseViewController: UIViewController{
         formatter.groupingSize = 3
         return formatter
     }
+    
+    
+    @IBAction func detailPressed(_ sender: UIButton) {
+        
+    }
+    
+    //MARK: - UI & Animation Methods
+    
+    func getUpdateTime() {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .medium
+        
+        let dateTimeString = formatter.string(from: currentDateTime)
+        timeLabel.text = "Last updated on: " + dateTimeString
+    }
+    
     
     @objc func animateBlips(){
         UIView.animate(withDuration: 2.0) {
@@ -78,21 +95,11 @@ class CaseViewController: UIViewController{
             }
         }
     }
-    
-    func getUpdateTime() {
-        let currentDateTime = Date()
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .medium
-        
-        let dateTimeString = formatter.string(from: currentDateTime)
-        timeLabel.text = "Last updated on: " + dateTimeString
-    }
 }
 
 //MARK: - CountryPickerView Delegate Methods
 
-extension CaseViewController: CountryPickerViewDelegate, CountryPickerViewDataSource {
+extension MainViewController: CountryPickerViewDelegate, CountryPickerViewDataSource {
     
     
     @IBAction func showCountryList(_ sender: Any) {
@@ -101,21 +108,13 @@ extension CaseViewController: CountryPickerViewDelegate, CountryPickerViewDataSo
     
     
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
-        
         caseManager.fetchCases(countryCode: country.code)
         countryButton.setTitle(country.name, for: .normal)
         countryButton.setImage(country.flag, for: .normal)
         getUpdateTime()
         saveCountryData(country)
-        
-    }
-    
-    //    func searchFor(_ countryName: String) -> CountryModel? {
-    //        return countries.first(where: {$0.name == countryName})
-    //    }
-    
-    //TODO: Add updateLabels function & separated Labels functions
-    
+}
+
     //MARK: - User Defaults
     
     private func saveCaseData(_ cases: CaseModel) {
@@ -124,8 +123,8 @@ extension CaseViewController: CountryPickerViewDelegate, CountryPickerViewDataSo
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "SavedCases")
         }
-    }
-    
+}
+
     private func saveCountryData(_ country: Country) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(country) {
@@ -155,7 +154,7 @@ extension CaseViewController: CountryPickerViewDelegate, CountryPickerViewDataSo
 
 //MARK: - CaseManager Delegate Methods
 
-extension CaseViewController: CaseManagerDelegate {
+extension MainViewController: CaseManagerDelegate {
     func didFailWithError(error: Error) {
         DispatchQueue.main.async {
             
@@ -168,7 +167,6 @@ extension CaseViewController: CaseManagerDelegate {
     
     func didUpdateCases(cases: CaseModel) {
         DispatchQueue.main.async {
-            
             self.setCompletionBlocks()
             
             self.confirmedLabel.countFromCurrentValueTo(CGFloat(cases.confirmed))
