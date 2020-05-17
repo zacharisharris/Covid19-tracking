@@ -20,7 +20,7 @@ public struct Country: Equatable, Codable {
     public let phoneCode: String
     public func localizedName(_ locale: Locale = Locale.current) -> String? {
         return locale.localizedString(forRegionCode: code)
-    }
+}
     public var flag: UIImage {
         return UIImage(named: "CountryPickerView.bundle/Images/\(code.uppercased())",
             in: Bundle(for: CountryPickerView.self), compatibleWith: nil)!
@@ -167,7 +167,7 @@ public class CountryPickerView: NibView {
                 self.delegate?.countryPickerView(self, didShow: countryVc)
             }
         }
-    }
+}
     
     public let countries: [Country] = {
         var countries = [Country]()

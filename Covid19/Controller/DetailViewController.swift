@@ -7,24 +7,45 @@
 //
 
 import UIKit
+import CountryPickerView
+
+protocol DetailViewControllerDelegate: class {
+    func detailViewControllerIsCountryFavorite(vc: DetailViewController) -> Bool
+    func detailViewControllerGetCountry(vc: DetailViewController) -> Country
+    func detailViewController(vc: DetailViewController, setCountryFavorite: Bool)
+}
 
 class DetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var flagImageView: UIImageView!
+    weak var delegate : DetailViewControllerDelegate?
+    private var isFavorite = false {
+        didSet {
+            updateFavoriteButton()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    public var country: Country? {
+        didSet {
+            updateUI()
+        }
     }
-    */
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        country = delegate?.detailViewControllerGetCountry(vc: self)
+        isFavorite = delegate?.detailViewControllerIsCountryFavorite(vc: self) ?? false
+}
+    
+    func updateUI() {
+        if let country = country {
+            loadViewIfNeeded()
+            navigationItem.title = country.name
+            flagImageView.image = country.flag
+            updateFavoriteButton()
+        }
+    }
+    
+    func updateFavoriteButton() {
+        //TODO
+    }
 }

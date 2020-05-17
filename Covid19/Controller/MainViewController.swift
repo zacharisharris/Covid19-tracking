@@ -15,8 +15,8 @@ class MainViewController: UIViewController {
     var caseManager = CaseManager()
     let defaults = UserDefaults.standard
     lazy private var numberFormatter = makeNumberFormatter()
-    var favorites : [Country] = []
-    
+    lazy private var favoriteCountries = [Country]()
+    private var currentCountry: Country!
 
     @IBOutlet weak var countryPickerView: CountryPickerView!
     @IBOutlet weak var countryButton: UIButton!
@@ -31,6 +31,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentCountry = countryPickerView.getCountryByCode("GR")
+        favoriteCountries = [currentCountry]
+
         countryPickerView.delegate = self
         countryPickerView.dataSource = self
         caseManager.delegate = self
@@ -50,9 +53,15 @@ class MainViewController: UIViewController {
         return formatter
     }
     
-    
     @IBAction func detailPressed(_ sender: UIButton) {
-        
+        self.performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.delegate = self
+        }
     }
     
     //MARK: - UI & Animation Methods
@@ -101,19 +110,27 @@ class MainViewController: UIViewController {
 
 extension MainViewController: CountryPickerViewDelegate, CountryPickerViewDataSource {
     
-    
     @IBAction func showCountryList(_ sender: Any) {
         countryPickerView.showCountriesList(from: self)
     }
     
     
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        currentCountry = country
         caseManager.fetchCases(countryCode: country.code)
         countryButton.setTitle(country.name, for: .normal)
         countryButton.setImage(country.flag, for: .normal)
         getUpdateTime()
         saveCountryData(country)
 }
+    
+    func preferredCountries(in countryPickerView: CountryPickerView) -> [Country] {
+            return favoriteCountries
+    }
+    
+    func sectionTitleForPreferredCountries(in countryPickerView: CountryPickerView) -> String? {
+        return "Favorites"
+    }
 
     //MARK: - User Defaults
     
@@ -137,6 +154,7 @@ extension MainViewController: CountryPickerViewDelegate, CountryPickerViewDataSo
         let decoder = JSONDecoder()
         if let savedCountry = defaults.object(forKey: "SavedCountry") as? Data {
             if let loadedCountry = try? decoder.decode(Country.self, from: savedCountry) {
+                currentCountry = loadedCountry
                 countryButton.setTitle(loadedCountry.name, for: .normal)
                 countryButton.setImage(loadedCountry.flag, for: .normal)
             }
@@ -175,19 +193,32 @@ extension MainViewController: CaseManagerDelegate {
             self.saveCaseData(cases)
         }
     }
+}
+extension MainViewController: DetailViewControllerDelegate {
+    func detailViewControllerIsCountryFavorite(vc: DetailViewController) -> Bool {
+        return favoriteCountries.contains(currentCountry)
+    }
     
-    //MARK: - Might be removed
+    func detailViewControllerGetCountry(vc: DetailViewController) -> Country {
+        return currentCountry
+    }
     
-    func setUpdateBlocks() {
-        confirmedLabel.setUpdateBlock { [weak self] value, label in
-            label.text = self?.numberFormatter.string(from: NSNumber(value: Float(value)))
-        }
-        deathsLabel.setUpdateBlock { [weak self] value, label in
-            label.text = self?.numberFormatter.string(from: NSNumber(value: Float(value)))
-        }
-        recoveredLabel.setUpdateBlock { [weak self] value, label in
-            label.text = self?.numberFormatter.string(from: NSNumber(value: Float(value)))
+    func detailViewController(vc: DetailViewController, setCountryFavorite: Bool) {
+        if let country = vc.country {
+            toggleFavoriteCountry(country)
         }
     }
+    
+    private func toggleFavoriteCountry(_ country: Country) {
+        if favoriteCountries.contains(country) {
+            if let index = favoriteCountries.firstIndex(of: country) {
+                favoriteCountries.remove(at: index)
+            }
+        } else {
+            favoriteCountries.append(country)
+        }
+    }
+    
+    
 }
 
