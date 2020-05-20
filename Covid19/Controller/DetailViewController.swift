@@ -13,11 +13,17 @@ protocol DetailViewControllerDelegate: class {
     func detailViewControllerIsCountryFavorite(vc: DetailViewController) -> Bool
     func detailViewControllerGetCountry(vc: DetailViewController) -> Country
     func detailViewController(vc: DetailViewController, setCountryFavorite: Bool)
+
 }
 
 class DetailViewController: UIViewController {
+    
+    var countryCases : CaseModel?
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var flagImageView: UIImageView!
+    
     weak var delegate : DetailViewControllerDelegate?
+    
     private var isFavorite = false {
         didSet {
             updateFavoriteButton()
@@ -29,11 +35,12 @@ class DetailViewController: UIViewController {
             updateUI()
         }
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         country = delegate?.detailViewControllerGetCountry(vc: self)
         isFavorite = delegate?.detailViewControllerIsCountryFavorite(vc: self) ?? false
+        print(countryCases!)
 }
     
     func updateUI() {
@@ -45,7 +52,19 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBAction func toggleFavorite(_ sender: Any) {
+        if isFavorite {
+            isFavorite = false
+        } else {
+            isFavorite = true
+        }
+    }
+    
     func updateFavoriteButton() {
-        //TODO
+        if isFavorite {
+            favoriteButton.setImage(UIImage(named: "remove.png"), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: "add.png"), for: .normal)
+        }
     }
 }

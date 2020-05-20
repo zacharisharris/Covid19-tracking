@@ -10,6 +10,7 @@ import Foundation
 
 protocol CaseManagerDelegate {
     func didUpdateCases(cases: CaseModel)
+    func didFetchModel(cases: CaseModel) -> CaseModel?
     func didFailWithError(error: Error)
 }
 

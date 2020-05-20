@@ -302,29 +302,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B86-K4-Mmg">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-rR-MtI">
+                                <rect key="frame" x="20" y="140" width="40" height="40"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaL-3k-CSu">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="toggleFavorite:" destination="Un3-sW-g8e" eventType="touchUpInside" id="GHd-ig-lze"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="B86-K4-Mmg" firstAttribute="centerY" secondItem="cm2-RR-bp1" secondAttribute="centerY" id="JbU-ic-hP4"/>
-                            <constraint firstItem="B86-K4-Mmg" firstAttribute="centerX" secondItem="cm2-RR-bp1" secondAttribute="centerX" id="bsN-77-KHH"/>
-                            <constraint firstItem="B86-K4-Mmg" firstAttribute="leading" secondItem="KhP-Z2-XI1" secondAttribute="leading" constant="87" id="i4i-4D-6L0"/>
-                            <constraint firstItem="B86-K4-Mmg" firstAttribute="top" secondItem="KhP-Z2-XI1" secondAttribute="top" constant="244" id="uK7-ee-lEK"/>
+                            <constraint firstItem="KhP-Z2-XI1" firstAttribute="bottom" secondItem="Bia-rR-MtI" secondAttribute="bottom" constant="633" id="9CR-od-Qrw"/>
+                            <constraint firstItem="HaL-3k-CSu" firstAttribute="centerX" secondItem="cm2-RR-bp1" secondAttribute="centerX" id="TlS-WW-7RN"/>
+                            <constraint firstItem="KhP-Z2-XI1" firstAttribute="trailing" secondItem="Bia-rR-MtI" secondAttribute="trailing" constant="354" id="Yiu-ZR-q82"/>
+                            <constraint firstItem="Bia-rR-MtI" firstAttribute="leading" secondItem="KhP-Z2-XI1" secondAttribute="leading" constant="20" id="YyS-fI-3aZ"/>
+                            <constraint firstItem="Bia-rR-MtI" firstAttribute="top" secondItem="KhP-Z2-XI1" secondAttribute="top" id="nN2-W8-sjE"/>
+                            <constraint firstItem="HaL-3k-CSu" firstAttribute="centerY" secondItem="cm2-RR-bp1" secondAttribute="centerY" id="xA1-Di-nAV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KhP-Z2-XI1"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" largeTitleDisplayMode="always" id="pCd-wW-Jhf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="1SE-Qc-9AD"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="flagImageView" destination="B86-K4-Mmg" id="W1F-HY-KGS"/>
+                        <outlet property="favoriteButton" destination="HaL-3k-CSu" id="uSe-Vo-3tC"/>
+                        <outlet property="flagImageView" destination="Bia-rR-MtI" id="aUP-rl-Ub6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esG-sP-GbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="891"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="890.625"/>
         </scene>
     </scenes>
     <resources>

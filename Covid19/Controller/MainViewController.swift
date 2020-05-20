@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     lazy private var numberFormatter = makeNumberFormatter()
     lazy private var favoriteCountries = [Country]()
     private var currentCountry: Country!
+    private var currentModel: CaseModel!
 
     @IBOutlet weak var countryPickerView: CountryPickerView!
     @IBOutlet weak var countryButton: UIButton!
@@ -31,7 +32,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentCountry = countryPickerView.getCountryByCode("GR")
+        currentCountry = countryPickerView.getCountryByCode(Locale.current.regionCode!)
         favoriteCountries = [currentCountry]
 
         countryPickerView.delegate = self
@@ -60,6 +61,7 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let detailVC = segue.destination as! DetailViewController
+            detailVC.countryCases = currentModel
             detailVC.delegate = self
         }
     }
@@ -162,6 +164,7 @@ extension MainViewController: CountryPickerViewDelegate, CountryPickerViewDataSo
         
         if let savedCases = defaults.object(forKey: "SavedCases") as? Data {
             if let loadedCases = try? decoder.decode(CaseModel.self, from: savedCases) {
+                currentModel = loadedCases
                 self.confirmedLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.confirmedCases))
                 self.deathsLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.deathCases))
                 self.recoveredLabel.text = numberFormatter.string(from: NSNumber(value: loadedCases.recoveredCases))
@@ -173,6 +176,7 @@ extension MainViewController: CountryPickerViewDelegate, CountryPickerViewDataSo
 //MARK: - CaseManager Delegate Methods
 
 extension MainViewController: CaseManagerDelegate {
+
     func didFailWithError(error: Error) {
         DispatchQueue.main.async {
             
@@ -191,10 +195,22 @@ extension MainViewController: CaseManagerDelegate {
             self.deathsLabel.countFromCurrentValueTo(CGFloat(cases.deaths))
             self.recoveredLabel.countFromCurrentValueTo(CGFloat(cases.recovered))
             self.saveCaseData(cases)
+            self.currentModel = cases
+
         }
     }
+    
+    func didFetchModel(cases: CaseModel) -> CaseModel? {
+        let aCaseModel = cases
+        return aCaseModel
+    }
+    
 }
+
+//MARK: - DetailVC Delegate Methods
+
 extension MainViewController: DetailViewControllerDelegate {
+
     func detailViewControllerIsCountryFavorite(vc: DetailViewController) -> Bool {
         return favoriteCountries.contains(currentCountry)
     }
